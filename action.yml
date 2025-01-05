@@ -65,6 +65,11 @@ runs:
         ../code serve-web --port 8391 --connection-token ${{ inputs.token }} 1> /dev/null 2>&1  &
         ../cloudflared tunnel --url http://localhost:8391 > ../mylog.txt 2>&1 &
 
+    - name: Install extension
+      shell: bash
+      run: |
+        ../code --install-extension ms-vscode.cpptools
+
 
     - name: Get Script
       shell: bash
