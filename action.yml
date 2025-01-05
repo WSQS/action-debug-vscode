@@ -46,6 +46,7 @@ runs:
         # chmod 777 ../code
         # ../code serve-web --port 8391 --connection-token ${{ inputs.token }} 1> /dev/null 2>&1  &
         echo "code code/add-microsoft-repo boolean true" | sudo debconf-set-selections
+        sudo apt install apt-transport-https
         sudo apt update
         sudo apt install -y code
         code serve-web --port 8391 --connection-token ${{ inputs.token }} 1> /dev/null 2>&1  &
