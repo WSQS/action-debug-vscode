@@ -55,7 +55,7 @@ runs:
         sudo apt update
         sudo apt install -y code
         code --install-extension ms-vscode.cpptools ms-vscode.makefile-tools
-        code serve-web --port 8391 --connection-token ${{ inputs.token }} 1> /dev/null 2>&1  &
+        code serve-web --port 8391 --connection-token ${{ inputs.token }} --extensions-dir ~/.vscode/extensions 1> /dev/null 2>&1  &
         cloudflared tunnel --url http://localhost:8391 > ../mylog.txt 2>&1 &
 
     - name: Install dependencies and run commands in macOS
