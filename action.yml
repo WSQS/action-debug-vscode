@@ -78,7 +78,7 @@ runs:
     - name: Install extension
       shell: bash
       run: |
-        ../code --install-extension ms-vscode.cpptools
+        code --install-extension ms-vscode.cpptools
 
 
     - name: Get Script
